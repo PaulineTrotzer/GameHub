@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 interface Genre {
   id: number;
   name: string;
+  image_background: string;
 }
 
 interface FetchGenresResponse {
