@@ -4,6 +4,7 @@ import GameGrid from "./components/ui/layout/GameGrid";
 import GenreList from "./components/ui/GenreList";
 import { useState } from "react";
 import { Genre } from "./components/ui/hooks/useGenre";
+import { select } from "framer-motion/client";
 
 function App() {
   const showAside = useBreakpointValue({ base: false, lg: true });
@@ -24,7 +25,10 @@ function App() {
       </GridItem>
       <Show when={showAside}>
         <GridItem paddingX={5} area="aside">
-          <GenreList onSelectGenre={(genre) => setSelectedGenre(genre)} />
+          <GenreList
+            selectedGenre={selectedGenre}
+            onSelectGenre={(genre) => setSelectedGenre(genre)}
+          />
         </GridItem>
       </Show>
       <GridItem area="main">
