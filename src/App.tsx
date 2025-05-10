@@ -5,6 +5,7 @@ import GenreList from "./components/ui/GenreList";
 import { useState } from "react";
 import { Genre } from "./components/ui/hooks/useGenre";
 import { select } from "framer-motion/client";
+import PlatformSelector from "./components/ui/PlatformSelector";
 
 function App() {
   const showAside = useBreakpointValue({ base: false, lg: true });
