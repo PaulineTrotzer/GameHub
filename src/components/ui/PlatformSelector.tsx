@@ -1,8 +1,11 @@
 import { Button, Menu } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
+import usePlatforms from "./hooks/usePlatforms";
 
 const PlatformSelector = () => {
-  const links: any = [1, 2, 3];
+  const { data, error } = usePlatforms();
+
+  if (error) return null;
   return (
     <Menu.Root>
       <Menu.Trigger asChild>
@@ -12,11 +15,9 @@ const PlatformSelector = () => {
       </Menu.Trigger>
       <Menu.Positioner>
         <Menu.Content>
-          {links.map((link: any) => (
-            <Menu.Item key={link.href} asChild value={link.title}>
-              <a href={link.href} target="_blank" rel="noreferrer">
-                {link.title}
-              </a>
+          {data.map((platform) => (
+            <Menu.Item key={platform.id} value={String(platform.id)}>
+              {platform.name}
             </Menu.Item>
           ))}
         </Menu.Content>

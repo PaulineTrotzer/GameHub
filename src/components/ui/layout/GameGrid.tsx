@@ -5,7 +5,6 @@ import GameCardSkeleton from "../GameCardSkeleton";
 import { Genre } from "../hooks/useGenre";
 
 interface Props {
-  game: Game;
   selectedGenre: Genre | null;
 }
 
