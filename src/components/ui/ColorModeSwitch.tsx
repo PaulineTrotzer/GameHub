@@ -17,8 +17,7 @@ export default function ColorModeSwitch() {
           <Switch.Thumb />
         </Switch.Control>
       </Switch.Root>
-
-      <Text userSelect="none">
+      <Text whiteSpace="nowrap" userSelect="none">
         {colorMode === "dark" ? "Dark Mode" : "Light Mode"}
       </Text>
     </HStack>
