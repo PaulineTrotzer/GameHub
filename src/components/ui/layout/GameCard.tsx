@@ -25,17 +25,17 @@ export default function GameCard({ game }: Props) {
         alt={game.name}
       />
       <Card.Header>
-        <Card.Title fontSize={20} textAlign="center" mt="2" mb={4}>
-          {game.name}
-        </Card.Title>
-      </Card.Header>
-      <Card.Footer mt="auto" p={4}>
         <HStack w="full" justifyContent="space-between">
           <PlatformIconList
             platforms={game.parent_platforms.map((p) => p.platform)}
           />
           <CriticScore score={game.metacritic} />
         </HStack>
+      </Card.Header>
+      <Card.Footer mt="auto" p={4}>
+        <Card.Title fontSize={20} textAlign="center" mt="2" mb={4}>
+          {game.name}
+        </Card.Title>
       </Card.Footer>
     </Card.Root>
   );
