@@ -11,6 +11,7 @@ import { Game } from "../hooks/useGames";
 import PlatformIconList from "../PlatformIconList";
 import CriticScore from "../CriticScore";
 import getCroppedImageUrl from "@/services/image-url";
+import Emoji from "@/components/Emoji";
 
 interface Props {
   game: Game;
@@ -35,6 +36,7 @@ export default function GameCard({ game }: Props) {
       <Card.Footer mt="auto" p={4}>
         <Card.Title fontSize={20} textAlign="center" mt="2" mb={4}>
           {game.name}
+          <Emoji rating={game.rating_top} />
         </Card.Title>
       </Card.Footer>
     </Card.Root>
